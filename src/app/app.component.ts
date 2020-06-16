@@ -3,8 +3,7 @@ import {DataModel} from './models/data.model';
 import {DataService} from './services/data.service';
 import {select, Store} from '@ngrx/store';
 import {AppState} from './store/app.state';
-import {SuccessLoadGames} from './store/actions/game.actions';
-import {StartLoading} from './store/actions/loading.actions';
+import {StartLoadGames, SuccessLoadGames} from './store/actions/game.actions';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -14,17 +13,17 @@ import {Observable} from 'rxjs';
 })
 export class AppComponent implements OnInit {
 
-  $loading: Observable<boolean>;
+  $loading: Observable<{ isLoading: boolean }>;
 
   constructor(
     private dataService: DataService,
     private store: Store<AppState>,
   ) {
-    this.$loading = store.pipe(select('loading'));
+    this.$loading = store.pipe(select('data'));
   }
 
   ngOnInit(): void {
-    this.store.dispatch(new StartLoading());
+    this.store.dispatch(new StartLoadGames());
     this.dataService.getDataFromFirebase()
       .subscribe(
         (res: DataModel[]) => {
