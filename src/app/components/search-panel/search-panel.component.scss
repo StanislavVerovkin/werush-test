@@ -1,0 +1,20 @@
+.panel {
+  display: flex;
+  align-items: center;
+  background-color: #3399fe;
+  height: 80px;
+  margin-top: 22px;
+
+  .panel__item {
+    border: none;
+    height: 40px;
+    width: 100%;
+    outline: none;
+    margin: 0 0 0 20px;
+  }
+}
+
+.search-icon {
+  width: 25px;
+  margin: 0 10px 0 10px;
+}

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "werush-test": {
+      "hosting": {
+        "werush-test": [
+          "werush-test"
+        ]
+      }
+    }
+  }
+}
