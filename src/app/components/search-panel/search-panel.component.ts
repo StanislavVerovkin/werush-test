@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {AppState} from '../../store/app.state';
 import {Store} from '@ngrx/store';
 import {FilterGames} from '../../store/actions/game.actions';
@@ -8,14 +8,11 @@ import {FilterGames} from '../../store/actions/game.actions';
   templateUrl: './search-panel.component.html',
   styleUrls: ['./search-panel.component.scss']
 })
-export class SearchPanelComponent implements OnInit {
+export class SearchPanelComponent {
 
   constructor(
     private store: Store<AppState>
   ) {
-  }
-
-  ngOnInit(): void {
   }
 
   filterGames(event) {
