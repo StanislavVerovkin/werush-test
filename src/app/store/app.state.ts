@@ -4,6 +4,6 @@ export interface AppState {
   data: {
     games: DataModel[];
     filteredGames: DataModel[];
-    loading: boolean;
   };
+  loading: boolean;
 }

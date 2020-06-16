@@ -4,7 +4,6 @@ import {DataModel} from '../../models/data.model';
 const initialState = {
   games: [],
   filteredGames: [],
-  loading: false,
 };
 
 export function gameReducers(state = initialState, action: GameActions) {
@@ -12,14 +11,12 @@ export function gameReducers(state = initialState, action: GameActions) {
     case GAMES_ACTION.START_LOAD_GAMES:
       return {
         ...state,
-        loading: true
       };
     case GAMES_ACTION.SUCCESS_LOAD_GAMES:
       return {
         ...state,
         games: action.payload,
         filteredGames: action.payload,
-        loading: false,
       };
     case GAMES_ACTION.FILTER_GAMES:
       return {

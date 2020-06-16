@@ -14,9 +14,11 @@ import {LoaderComponent} from './components/loader/loader.component';
 import {environment} from '../environments/environment';
 
 import {gameReducers} from './store/reducers/game.reducers';
+import {loadingReducers} from './store/reducers/loading.reducers';
 
 const reducers = {
   data: gameReducers,
+  loading: loadingReducers,
 };
 
 @NgModule({
